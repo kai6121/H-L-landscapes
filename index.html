@@ -1,135 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H&L Landscapes</title>
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+function Navbar() {
+  return (
+    <nav className="flex justify-between items-center px-8 py-4 shadow-sm bg-white sticky top-0 z-50">
+      <h1 className="text-xl font-semibold">H&L Landscaping</h1>
+      <div className="space-x-6 text-sm flex items-center">
+        <Link to="/">Home</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <a href="tel:+441234567890" className="bg-black text-white px-4 py-2 rounded-xl ml-4">
+          Call Now
+        </a>
+      </div>
+    </nav>
+  );
 }
 
-header {
-    background: #2e7d32;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav {
-    background: #1b5e20;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hero {
-    background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') no-repeat center/cover;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-}
-
-.card {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-footer {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>H&L Landscapes</h1>
-    <p>Professional Landscaping Services</p>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section class="hero">
-    <h2>Transforming Outdoor Spaces</h2>
-    <p>Reliable • Affordable • Professional</p>
-</section>
-
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <p>At H&L Landscapes, we provide high-quality landscaping services tailored to your needs. We take pride in transforming gardens and outdoor spaces into something you’ll love.</p>
-</section>
-
-<section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Lawn Care</h3>
-            <p>Mowing, trimming, and regular maintenance.</p>
-        </div>
-        <div class="card">
-            <h3>Patios & Paving</h3>
-            <p>Custom patios and durable paving solutions.</p>
-        </div>
-        <div class="card">
-            <h3>Fencing</h3>
-            <p>Strong and stylish fencing installation.</p>
-        </div>
-        <div class="card">
-            <h3>Garden Design</h3>
-            <p>Creative and modern outdoor designs.</p>
-        </div>
-        <div class="card">
-            <h3>Hedge Cutting</h3>
-            <p>Neat and professional hedge trimming.</p>
-        </div>
-        <div class="card">
-            <h3>General Maintenance</h3>
-            <p>Keeping your outdoor space clean and tidy.</p>
-        </div>
+function Home() {
+  return (
+    <div className="text-center py-24 px-6">
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-5xl font-bold mb-6"
+      >
+        Beautiful Landscapes, Built to Last
+      </motion.h1>
+      <p className="text-gray-600 max-w-xl mx-auto mb-6">
+        Premium landscaping services designed with precision, care, and a clean modern touch.
+      </p>
+      <a href="tel:+441234567890" className="bg-black text-white px-6 py-3 rounded-xl">
+        Call Us Today
+      </a>
     </div>
-</section>
+  );
+}
 
-<section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: 07XXX XXX XXX</p>
-    <p>📧 Email: info@hllandscapes.co.uk</p>
-    <p>📍 Location: Your Town</p>
-</section>
+function Services() {
+  return (
+    <div className="p-12 grid md:grid-cols-3 gap-8">
+      {["Garden Design", "Lawn Care", "Hardscaping"].map((service) => (
+        <div key={service} className="p-6 border rounded-2xl shadow-sm hover:shadow-md transition">
+          <h2 className="text-xl font-semibold mb-2">{service}</h2>
+          <p className="text-gray-600 text-sm">
+            High-quality {service.toLowerCase()} tailored to your property.
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-<footer>
-    <p>© 2026 H&L Landscapes. All rights reserved.</p>
-</footer>
+function About() {
+  return (
+    <div className="p-12 max-w-3xl mx-auto">
+      <h2 className="text-3xl font-semibold mb-4">About Us</h2>
+      <p className="text-gray-600 leading-relaxed">
+        H&L Landscaping is dedicated to creating elegant, sustainable outdoor spaces. With years of experience, we bring craftsmanship and attention to detail to every project.
+      </p>
+    </div>
+  );
+}
 
-</body>
-</html>
+function Contact() {
+  return (
+    <div className="p-12 max-w-xl mx-auto text-center">
+      <h2 className="text-3xl font-semibold mb-6">Get In Touch</h2>
+      <p className="mb-6 text-gray-600">Have a project in mind? Call us directly for a fast response.</p>
+      <a href="tel:+441234567890" className="bg-black text-white px-6 py-3 rounded-xl">
+        Call Now
+      </a>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+}
