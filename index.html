@@ -8,98 +8,124 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:Inter;background:#f4f6f3;color:#222}
-header{display:flex;justify-content:space-between;align-items:center;padding:15px;background:#fff}
-header h2{color:#1f4d2b}
-
-.hero{
-background:url('https://images.unsplash.com/photo-1558904541-efa843a96f01') center/cover;
-color:#fff;padding:80px 20px
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #111;
 }
-.hero h1{font-size:32px}
-.hero p{margin:15px 0;line-height:1.6}
-
-.btn{display:block;width:100%;padding:15px;margin-top:10px;border-radius:10px;text-align:center;font-weight:600}
-.green{background:#1f4d2b;color:#fff}
-.white{background:#fff;color:#1f4d2b}
-
-.stats{background:#1f4d2b;color:#fff;display:grid;grid-template-columns:1fr 1fr;text-align:center;padding:30px 10px}
-
-.section{padding:40px 20px;text-align:center}
-.card{
-background:#fff;padding:20px;border-radius:15px;margin-top:20px;text-align:left;
-box-shadow:0 5px 15px rgba(0,0,0,0.05)
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
 }
-
-.gallery img{width:100%;border-radius:15px;margin-top:15px}
-
-.cta{
-background:url('https://images.unsplash.com/photo-1502082553048-f009c37129b9') center/cover;
-color:#fff;padding:60px 20px;text-align:center
+.hero {
+    background: url("https://images.unsplash.com/photo-1598902108854-10e335adac99") center/cover;
+    color: white;
+    padding: 120px 0;
 }
-
-.footer{background:#111;color:#ccc;padding:40px 20px}
-.footer h3{color:#fff}
+h1 {font-size: 48px; margin-bottom: 20px;}
+h2 {font-size: 32px;}
+p {color: #555; line-height: 1.6;}
+.btn {
+    background: #2D5016;
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+.section {padding: 80px 0;}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.footer {
+    background: #111;
+    color: #aaa;
+    padding: 40px;
+    text-align: center;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<h2>🌿 H&L Landscapes</h2>
-☰
-</header>
-
+<!-- HERO -->
 <section class="hero">
-<h1>Premium Landscaping Services in Leicester</h1>
+<div class="container">
+<h1>Professional Landscaping in Leicester</h1>
 <p>Transform your outdoor space with expert landscaping and garden design.</p>
-
-<div class="btn green">Call Now</div>
-<div class="btn white">Get a Free Quote</div>
+<a class="btn">Get Free Quote</a>
+</div>
 </section>
 
-<div class="stats">
-<div><h2>10+</h2><p>Years Experience</p></div>
-<div><h2>300+</h2><p>Projects Completed</p></div>
-<div><h2>100%</h2><p>Satisfaction</p></div>
-<div><h2>24hr</h2><p>Response</p></div>
+<!-- SERVICES -->
+<section class="section">
+<div class="container">
+<h2>Our Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62">
+<h3>Garden Design</h3>
+<p>Complete garden transformations tailored to your space.</p>
 </div>
 
-<section class="section">
-<h2>Landscaping Services</h2>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154206-7b2a06e3d05f">
+<h3>Patios & Paving</h3>
+<p>Durable and modern patios built to last.</p>
+</div>
 
-<div class="card"><h3>Garden Design</h3><p>Bespoke garden transformations.</p></div>
-<div class="card"><h3>Patios & Paving</h3><p>High-quality outdoor surfaces.</p></div>
-<div class="card"><h3>Artificial Grass</h3><p>Low maintenance lawns.</p></div>
-<div class="card"><h3>Fencing</h3><p>Secure and stylish fencing.</p></div>
-<div class="card"><h3>Garden Maintenance</h3><p>Keep your garden perfect.</p></div>
-
-</section>
-
-<section class="section gallery">
-<h2>Our Work</h2>
+<div class="card">
 <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4">
-<img src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62">
-<img src="https://images.unsplash.com/photo-1558904541-efa843a96f01">
+<h3>Turfing</h3>
+<p>Fresh natural lawns installed professionally.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618220179428-22790b461013">
+<h3>Fencing</h3>
+<p>Strong and stylish fencing solutions.</p>
+</div>
+
+</div>
+</div>
 </section>
 
-<section class="cta">
-<h2>Ready to Upgrade Your Garden?</h2>
-<p>Contact H&L Landscapes today.</p>
-<div class="btn white">Call Us Now</div>
-<div class="btn green">Request Free Quote</div>
+<!-- ABOUT -->
+<section class="section" style="background:#f5f5f5;">
+<div class="container">
+<h2>Why Choose Us</h2>
+<p>Reliable landscaping specialists delivering high-quality outdoor spaces across Leicester and surrounding areas.</p>
+</div>
 </section>
 
-<footer class="footer">
-<h3>H&L Landscapes</h3>
-<p>Professional landscaping services in Leicester.</p>
+<!-- GALLERY -->
+<section class="section">
+<div class="container">
+<h2>Recent Work</h2>
 
-<p>📞 +44 1234 567890</p>
-<p>📧 info@hllandscapes.co.uk</p>
-<p>📍 Leicester, UK</p>
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1598902108854-10e335adac99">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf">
+</div>
 
-<p style="margin-top:20px">© 2026 H&L Landscapes</p>
-</footer>
+</div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>© 2026 H&L Landscapes</p>
+</div>
 
 </body>
 </html>
