@@ -9,25 +9,27 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f7faf8;
       color: #111;
-      background: #fff;
     }
 
+    /* NAVBAR */
     nav {
       position: sticky;
       top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
+      padding: 18px 40px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid #eee;
+      z-index: 1000;
     }
 
     nav h1 {
       font-size: 20px;
-      font-weight: 600;
+      color: #1f3d2b;
     }
 
     nav a {
@@ -37,42 +39,46 @@
       font-size: 14px;
     }
 
+    /* BUTTON */
     .btn {
-      background: black;
+      background: linear-gradient(135deg, #1f7a4d, #2ecc71);
       color: white;
       padding: 10px 18px;
       border-radius: 999px;
       text-decoration: none;
       font-size: 14px;
+      transition: 0.3s;
+      box-shadow: 0 6px 15px rgba(46, 204, 113, 0.25);
     }
 
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
     .hero {
       height: 90vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 20px;
-      background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+      color: white;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("https://images.unsplash.com/photo-1505691938895-1758d7feb511")
+        center/cover no-repeat;
     }
 
     .hero h2 {
-      font-size: 48px;
+      font-size: 52px;
       max-width: 800px;
-      margin-bottom: 20px;
     }
 
     .hero p {
-      color: #666;
-      max-width: 600px;
-      margin-bottom: 30px;
+      color: #ddd;
+      margin: 20px 0;
     }
 
-    .buttons a {
-      margin: 10px;
-    }
-
+    /* SECTION */
     .section {
       padding: 80px 20px;
       max-width: 1100px;
@@ -83,141 +89,164 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 25px;
       margin-top: 40px;
     }
 
     .card {
-      border: 1px solid #eee;
-      padding: 20px;
+      background: white;
+      padding: 25px;
       border-radius: 16px;
+      border: 1px solid #eee;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     }
 
+    .card h3 {
+      color: #1f7a4d;
+    }
+
+    /* IMAGES */
+    .img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .img:hover {
+      transform: scale(1.03);
+    }
+
+    /* BEFORE / AFTER */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .before-after div {
+      background: white;
+      padding: 10px;
+      border-radius: 14px;
+    }
+
+    .before-after img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 30px;
       border-top: 1px solid #eee;
-      color: #777;
       font-size: 14px;
+      color: #777;
+      background: #fff;
     }
 
-    .call-fixed {
+    /* FLOAT CALL BUTTON */
+    .call {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: black;
+      background: linear-gradient(135deg, #1f7a4d, #2ecc71);
       color: white;
       padding: 15px 18px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h1>H&L Landscaping</h1>
-    <div>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:+441234567890" class="btn">Call Now</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Crafting Exceptional Outdoor Spaces</h2>
-    <p>
-      Premium landscaping with a focus on detail, design, and lasting quality.
-    </p>
-
-    <div class="buttons">
-      <a href="#services" class="btn">Explore Services</a>
-      <a href="tel:+441234567890" class="btn" style="background:transparent; color:black; border:1px solid black;">
-        Call Now
-      </a>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Garden Design</h3>
-        <p>Elegant and modern garden layouts tailored to your space.</p>
-      </div>
-
-      <div class="card">
-        <h3>Lawn Maintenance</h3>
-        <p>Keep your lawn clean, healthy, and perfectly maintained.</p>
-      </div>
-
-      <div class="card">
-        <h3>Patios & Driveways</h3>
-        <p>High-end paving and outdoor surfaces built to last.</p>
-      </div>
-
-      <div class="card">
-        <h3>Tree & Hedge Care</h3>
-        <p>Professional trimming and maintenance services.</p>
-      </div>
-
-      <div class="card">
-        <h3>Full Landscaping</h3>
-        <p>Complete outdoor transformations from start to finish.</p>
-      </div>
-
-      <div class="card">
-        <h3>Cleanups</h3>
-        <p>Seasonal tidy-ups to keep your property looking perfect.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p style="max-width:700px; margin:auto; color:#666;">
-      H&L Landscaping delivers high-end outdoor spaces with a focus on precision,
-      quality, and customer satisfaction. We bring modern design and expert
-      craftsmanship together to create beautiful environments.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Get In Touch</h2>
-    <p style="color:#666; margin-bottom:20px;">
-      Call us today to discuss your project.
-    </p>
-
+<!-- NAV -->
+<nav>
+  <h1>H&L Landscaping</h1>
+  <div>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
     <a href="tel:+441234567890" class="btn">Call Now</a>
-  </section>
+  </div>
+</nav>
 
-  <!-- FOOTER -->
-  <footer>
-    © <span id="year"></span> H&L Landscaping. All rights reserved.
-  </footer>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h2>Crafting Exceptional Outdoor Spaces</h2>
+    <p>Premium landscaping with precision, beauty, and lasting quality.</p>
+    <a href="#services" class="btn">Explore Services</a>
+  </div>
+</section>
 
-  <!-- FLOATING CALL BUTTON -->
-  <a href="tel:+441234567890" class="call-fixed">📞 Call</a>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <h2>Our Services</h2>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <div class="grid">
+    <div class="card"><h3>Garden Design</h3><p>Modern, elegant outdoor spaces.</p></div>
+    <div class="card"><h3>Lawn Care</h3><p>Perfect, healthy lawns all year.</p></div>
+    <div class="card"><h3>Driveways</h3><p>Premium paving & driveways.</p></div>
+    <div class="card"><h3>Tree Care</h3><p>Professional maintenance.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="work" class="section">
+  <h2>Our Work</h2>
+
+  <div class="grid">
+    <img class="img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+    <img class="img" src="https://images.unsplash.com/photo-1598902108854-10e335adac99">
+    <img class="img" src="https://images.unsplash.com/photo-1558904541-efa843a96f01">
+  </div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="section">
+  <h2>Transformations</h2>
+
+  <div class="before-after">
+    <div>
+      <p>Before</p>
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+    </div>
+
+    <div>
+      <p>After</p>
+      <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Get In Touch</h2>
+  <p>Call us today for a free quote.</p>
+  <a href="tel:+441234567890" class="btn">Call Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © <span id="year"></span> H&L Landscaping
+</footer>
+
+<!-- FLOAT BUTTON -->
+<a href="tel:+441234567890" class="call">📞 Call</a>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
