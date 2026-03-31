@@ -1,92 +1,223 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>H&L Landscaping</title>
 
-function Navbar() {
-  return (
-    <nav className="flex justify-between items-center px-8 py-4 shadow-sm bg-white sticky top-0 z-50">
-      <h1 className="text-xl font-semibold">H&L Landscaping</h1>
-      <div className="space-x-6 text-sm flex items-center">
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <a href="tel:+441234567890" className="bg-black text-white px-4 py-2 rounded-xl ml-4">
-          Call Now
-        </a>
-      </div>
-    </nav>
-  );
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #111;
+      background: #fff;
+    }
 
-function Home() {
-  return (
-    <div className="text-center py-24 px-6">
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-5xl font-bold mb-6"
-      >
-        Beautiful Landscapes, Built to Last
-      </motion.h1>
-      <p className="text-gray-600 max-w-xl mx-auto mb-6">
-        Premium landscaping services designed with precision, care, and a clean modern touch.
-      </p>
-      <a href="tel:+441234567890" className="bg-black text-white px-6 py-3 rounded-xl">
-        Call Us Today
-      </a>
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
+
+    nav h1 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .btn {
+      background: black;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #666;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .buttons a {
+      margin: 10px;
+    }
+
+    .section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #eee;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .call-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: black;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>H&L Landscaping</h1>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+441234567890" class="btn">Call Now</a>
     </div>
-  );
-}
+  </nav>
 
-function Services() {
-  return (
-    <div className="p-12 grid md:grid-cols-3 gap-8">
-      {["Garden Design", "Lawn Care", "Hardscaping"].map((service) => (
-        <div key={service} className="p-6 border rounded-2xl shadow-sm hover:shadow-md transition">
-          <h2 className="text-xl font-semibold mb-2">{service}</h2>
-          <p className="text-gray-600 text-sm">
-            High-quality {service.toLowerCase()} tailored to your property.
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Crafting Exceptional Outdoor Spaces</h2>
+    <p>
+      Premium landscaping with a focus on detail, design, and lasting quality.
+    </p>
 
-function About() {
-  return (
-    <div className="p-12 max-w-3xl mx-auto">
-      <h2 className="text-3xl font-semibold mb-4">About Us</h2>
-      <p className="text-gray-600 leading-relaxed">
-        H&L Landscaping is dedicated to creating elegant, sustainable outdoor spaces. With years of experience, we bring craftsmanship and attention to detail to every project.
-      </p>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div className="p-12 max-w-xl mx-auto text-center">
-      <h2 className="text-3xl font-semibold mb-6">Get In Touch</h2>
-      <p className="mb-6 text-gray-600">Have a project in mind? Call us directly for a fast response.</p>
-      <a href="tel:+441234567890" className="bg-black text-white px-6 py-3 rounded-xl">
+    <div class="buttons">
+      <a href="#services" class="btn">Explore Services</a>
+      <a href="tel:+441234567890" class="btn" style="background:transparent; color:black; border:1px solid black;">
         Call Now
       </a>
     </div>
-  );
-}
+  </section>
 
-export default function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
-  );
-}
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Garden Design</h3>
+        <p>Elegant and modern garden layouts tailored to your space.</p>
+      </div>
+
+      <div class="card">
+        <h3>Lawn Maintenance</h3>
+        <p>Keep your lawn clean, healthy, and perfectly maintained.</p>
+      </div>
+
+      <div class="card">
+        <h3>Patios & Driveways</h3>
+        <p>High-end paving and outdoor surfaces built to last.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tree & Hedge Care</h3>
+        <p>Professional trimming and maintenance services.</p>
+      </div>
+
+      <div class="card">
+        <h3>Full Landscaping</h3>
+        <p>Complete outdoor transformations from start to finish.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cleanups</h3>
+        <p>Seasonal tidy-ups to keep your property looking perfect.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p style="max-width:700px; margin:auto; color:#666;">
+      H&L Landscaping delivers high-end outdoor spaces with a focus on precision,
+      quality, and customer satisfaction. We bring modern design and expert
+      craftsmanship together to create beautiful environments.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Get In Touch</h2>
+    <p style="color:#666; margin-bottom:20px;">
+      Call us today to discuss your project.
+    </p>
+
+    <a href="tel:+441234567890" class="btn">Call Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> H&L Landscaping. All rights reserved.
+  </footer>
+
+  <!-- FLOATING CALL BUTTON -->
+  <a href="tel:+441234567890" class="call-fixed">📞 Call</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
